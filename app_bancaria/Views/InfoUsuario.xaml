@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_bancaria.Views.InfoUsuario"
+             xmlns:local ="clr-namespace:app_bancaria.ViewModels"
+               Title="usuario">
+             
+
+    <ContentPage.BindingContext>
+
+        <local:ViewModelUsuario></local:ViewModelUsuario>
+        
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Nombre"></Label>
+            <Entry Text="{Binding Nombre}" Keyboard="Text"></Entry>
+
+            <Label Text="ID usuario: "></Label>
+            <Entry Text="{Binding iD_usuario}" Keyboard="Text"></Entry>
+
+
+            <Label Text="Nombre de usuario: "></Label>
+            <Entry Text="{Binding Nombre_usuario}" Keyboard="Text"></Entry>
+
+            <Label Text="Contraseña: "></Label>
+            <Entry Text="{Binding Password}" Keyboard="Text"></Entry>
+
+            <Button Text="Guardar" Command="{Binding CrearUsuario}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_bancaria.Views.InfoCuenta"
+             xmlns:local ="clr-namespace:app_bancaria.ViewModels"
+               Title="Cuenta">
+             
+
+    <ContentPage.BindingContext>
+
+        <local:ViewModelCuenta></local:ViewModelCuenta>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Monto inicial"></Label>
+            <Entry Text="{Binding monto_inicial}" Keyboard="Text"></Entry>
+
+            <Label Text="Monto Final"></Label>
+            <Entry Text="{Binding monto_final}" Keyboard="Text"></Entry>
+
+
+            <Label Text="Fecha Monto"/>
+            <DatePicker MinimumDate="{Binding FechaMin}" Date="{Binding Fecha_estado}" ></DatePicker>
+
+            <Button Text="Guardar" Command="{Binding CrearCuenta}" ></Button>
+
+            <Label Text="{Binding monto_final}"  />
+
+            <Label Text="{Binding Info}"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

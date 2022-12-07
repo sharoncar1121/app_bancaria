@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_bancaria.Views.InfoPagos"
+             xmlns:local ="clr-namespace:app_bancaria.ViewModels"
+               Title="Pagos">
+
+    <ContentPage.BindingContext>
+
+        <local:ViewModelPagos></local:ViewModelPagos>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Monto a pagar"></Label>
+            <Entry Text="{Binding Cant_pago}" Keyboard="Text"></Entry>
+
+            <Label Text="Detalles de pago:"></Label>
+            <Entry Text="{Binding Detalles_pago}" Keyboard="Text"></Entry>
+
+
+            <Label Text="Fecha pago"/>
+            <DatePicker MinimumDate="{Binding FechaMin}" Date="{Binding Fecha_pago}" ></DatePicker>
+
+            <Button Text="Guardar" Command="{Binding GuardarPago}" ></Button>
+
+            <Label Text="{Binding info}"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

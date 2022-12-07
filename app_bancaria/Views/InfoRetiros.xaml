@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_bancaria.Views.InfoRetiros"
+             xmlns:local ="clr-namespace:app_bancaria.ViewModels"
+               Title="Retiros"
+             >
+
+    <ContentPage.BindingContext>
+
+        <local:ViewModelRetiro></local:ViewModelRetiro>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Monto a retirar"></Label>
+            <Entry Text="{Binding Cant_retiro}" Keyboard="Text"></Entry>
+
+            <Label Text="Fecha retiro"/>
+            <DatePicker MinimumDate="{Binding FechaMin}" Date="{Binding Fecha_retiro}" ></DatePicker>
+
+            <Button Text="Guardar" Command="{Binding GuardarRetiro}" ></Button>
+
+            <Label Text="{Binding info}"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
